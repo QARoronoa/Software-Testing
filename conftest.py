@@ -2,6 +2,8 @@ import pytest
 from selenium import webdriver
 from data.Register_data import registerData
 from data.form_address import BillingAddress
+from pagesObject.WishListPage import WishListPage
+
 
 @pytest.fixture(scope="function")
 def setup(base_url):
@@ -28,3 +30,11 @@ def remplir_form_mdp_different():
 @pytest.fixture
 def form_checkout():
     return BillingAddress.formulaire_adress()
+
+@pytest.fixture
+def clear_wishlist(setup):
+    wish_list = WishListPage(setup)
+    wish_list.vider_la_wishList()
+    yield
+
+

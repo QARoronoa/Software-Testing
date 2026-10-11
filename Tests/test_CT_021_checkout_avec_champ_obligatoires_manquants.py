@@ -1,5 +1,3 @@
-import time
-
 import allure
 from pagesObject.HomePage import HomePage
 from pagesObject.CartPage import CartPage

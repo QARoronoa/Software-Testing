@@ -1,0 +1,1 @@
+{"uuid": "8caabdab-c9cc-4ae3-b9f0-86647ee2115f", "children": ["1f55231e-ebc7-4b40-93e1-2eb9a619b153"], "befores": [{"name": "pytestconfig", "status": "passed", "start": 1791132145648, "stop": 1791132145648}], "afters": [{"name": "pytestconfig::<lambda>", "start": 1791132180835}], "start": 1791132145648, "stop": 1791132180835}

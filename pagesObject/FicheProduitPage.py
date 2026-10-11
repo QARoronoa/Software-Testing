@@ -11,6 +11,9 @@ class FicheProduitPage(BasePage):
     bouton_panier = (By.XPATH, '(//div[@class="cart-icon"])[1]')
     bouton_view_cart = (By.LINK_TEXT, "View Cart")
     bouton_checkout = (By.LINK_TEXT, "Checkout ")
+    bouton_wishlist = (By.XPATH, "(//button[@class='btn btn-wishlist wishlist-42' ])[1]")
+    bouton_wishlist_selectionne = (By.XPATH, '(//button[@class="btn btn-wishlist wishlist-42 wished"])[1]')
+    bouton_wishList_popin = (By.XPATH, "//a[normalize-space()='Wish List (1)']")
 
 
     def __init__(self, driver):
@@ -32,4 +35,12 @@ class FicheProduitPage(BasePage):
 
     def cliquer_sur_view_cart(self):
         self.cliquer_sur_un_element(self.bouton_view_cart)
+
+    def cliquer_sur_le_bouton_favoris(self):
+        self.cliquer_sur_un_element_js(self.bouton_wishlist)
+
+    def deselectionner_favoris_si_necessaire(self):
+        boutons = self.driver.find_elements(*self.bouton_wishlist_selectionne)
+        if boutons:
+            self.cliquer_sur_un_element(self.bouton_wishlist_selectionne)
 
