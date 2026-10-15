@@ -1,13 +1,7 @@
-import time
-
 import allure
 from pagesObject.HomePage import HomePage
-from pagesObject.CartPage import CartPage
-from pagesObject.SearchPage import SearchPage
 from pagesObject.FicheProduitPage import FicheProduitPage
 from pagesObject.LoginPage import LoginPage
-from pagesObject.CheckoutPage import CheckoutPage
-from pagesObject.AccountPage import AccountPage
 from pagesObject.BrandPage import BrandPage
 from pagesObject.WishListPage import WishListPage
 
@@ -18,7 +12,6 @@ def test_Checkout_utilisateur_connecte_avec_formulaire_valide(setup, form_checko
     """Ajouter un article à ma wish list"""
     home_page = HomePage(setup)
     login_page = LoginPage(setup)
-    account_page = AccountPage(setup)
     brand_page = BrandPage(setup)
     wishList_page = WishListPage(setup)
     ficheProduit_page = FicheProduitPage(setup)
@@ -29,8 +22,6 @@ def test_Checkout_utilisateur_connecte_avec_formulaire_valide(setup, form_checko
         login_page.remplir_le_champ_email('vremy@example.com')
         login_page.remplir_le_champ_pwd('Test123!')
         login_page.cliquer_sur_login()
-
-
 
     with allure.step('ouvrir fiche produit'):
         home_page.deplacer_curseur_sur_un_MENU("Mega Menu")

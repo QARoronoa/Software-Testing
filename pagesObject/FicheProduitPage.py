@@ -14,6 +14,7 @@ class FicheProduitPage(BasePage):
     bouton_wishlist = (By.XPATH, "(//button[@class='btn btn-wishlist wishlist-42' ])[1]")
     bouton_wishlist_selectionne = (By.XPATH, '(//button[@class="btn btn-wishlist wishlist-42 wished"])[1]')
     bouton_wishList_popin = (By.XPATH, "//a[normalize-space()='Wish List (1)']")
+    popin_login = (By.XPATH, "(//span[@class='mr-auto'])[1]")
 
 
     def __init__(self, driver):
@@ -44,3 +45,7 @@ class FicheProduitPage(BasePage):
         if boutons:
             self.cliquer_sur_un_element(self.bouton_wishlist_selectionne)
 
+    def verifier_la_presence_popin_login(self):
+        message = self.capturer_le_texte_de_lelement(self.popin_login)
+        assert message == 'Login'
+        print(message)
