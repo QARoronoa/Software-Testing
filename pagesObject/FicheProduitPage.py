@@ -15,6 +15,8 @@ class FicheProduitPage(BasePage):
     bouton_wishlist_selectionne = (By.XPATH, '(//button[@class="btn btn-wishlist wishlist-42 wished"])[1]')
     bouton_wishList_popin = (By.XPATH, "//a[normalize-space()='Wish List (1)']")
     popin_login = (By.XPATH, "(//span[@class='mr-auto'])[1]")
+    bouton_compare = (By.XPATH,  "//button[normalize-space()='Compare this Product']")
+    bouton_compare_popin = (By.XPATH, " //a[normalize-space()='Product Compare (2)']")
 
 
     def __init__(self, driver):
@@ -49,3 +51,9 @@ class FicheProduitPage(BasePage):
         message = self.capturer_le_texte_de_lelement(self.popin_login)
         assert message == 'Login'
         print(message)
+
+    def cliquer_sur_bouton_compare(self):
+        self.cliquer_sur_un_element(self.bouton_compare)
+
+    def cliquer_sur_bouton_compare_popin(self):
+        self.cliquer_sur_un_element(self.bouton_compare_popin)

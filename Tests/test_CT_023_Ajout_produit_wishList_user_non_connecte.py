@@ -1,11 +1,8 @@
-import time
-
 import allure
 from pagesObject.HomePage import HomePage
 from pagesObject.FicheProduitPage import FicheProduitPage
-from pagesObject.LoginPage import LoginPage
 from pagesObject.BrandPage import BrandPage
-from pagesObject.WishListPage import WishListPage
+
 
 @allure.feature('Wishlist')
 @allure.story('US-WISHLIST')
